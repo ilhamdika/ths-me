@@ -12,7 +12,7 @@ export default function Index (){
 
       <NavigationBar/>
 
-            <div class="flex justify-center items-center py-36">
+            <div className="flex justify-center items-center py-36">
                 <div className="">
                     <img src="/images/landing.png" alt="IMG-20211017-123751" border="0" className='rounded-full w-64 h-64'/>
                     {/* <h1 className="text-white justify-center items-center flex mt-2">
@@ -24,14 +24,14 @@ export default function Index (){
                     <h1 className="text-white justify-center items-center flex text-4xl mt-3 font-medium">
                         Web Developer
                     </h1>
-                    <div class="flex justify-center items-center mt-3">
+                    <div className="flex justify-center items-center mt-3">
                         <PrimaryButton className="text-white  w-52">
                             About Me
                         </PrimaryButton>
                     </div>
                 </div>
             </div>
-            <div class="flex flex-col h-screen laptop:flex-row dekstop:flex-row tablet:flex-row ">
+            <div className="flex flex-col h-screen laptop:flex-row dekstop:flex-row tablet:flex-row ">
                 {[1,2,3].map(i=> (
                 <Card 
                 key={i}
@@ -43,7 +43,7 @@ export default function Index (){
             </div>
             <div>
 
-            <div class="flex justify-center items-center py-36">
+            <div className="flex justify-center items-center py-36">
             
                 <div className="">
                     <img src="/images/landing.png" alt="IMG-20211017-123751" border="0" className='rounded-full w-64 h-64'/>
@@ -56,7 +56,7 @@ export default function Index (){
                     <h1 className="text-white justify-center items-center flex text-4xl mt-3 font-medium">
                         Web Developer
                     </h1>
-                    <div class="flex justify-center items-center mt-3">
+                    <div className="flex justify-center items-center mt-3">
                         <PrimaryButton className="text-white  w-52">
                             About Me
                         </PrimaryButton>
