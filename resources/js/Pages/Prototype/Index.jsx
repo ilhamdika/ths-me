@@ -1,16 +1,16 @@
 import Card from "@/Components/Card";
+import CardPortfolio from "@/Components/CardPortfolio";
 import PrimaryButton from "@/Components/PrimaryButton";
 import AuthUser from "@/Layouts/AuthUser/Index";
 import NavigationBar from "@/Layouts/AuthUser/NavigationBar";
+import LayoutPage from "@/Layouts/LayoutPage";
 
 
 export default function Index (){
-    return(
-      <>
-      <div className="bg-black">
-        <div className="mr-10 ml-10">
+    return<LayoutPage>
 
-            <NavigationBar/>
+    
+      
 
             {/* Hero Content */}
             <div className="flex justify-center items-center py-36">
@@ -36,7 +36,7 @@ export default function Index (){
             {/* card */}
             <div className="flex flex-col h-screen laptop:flex-row dekstop:flex-row tablet:flex-row mobile:h-auto">
                 {[1,2,3].map(i=> (
-                <Card 
+                <Card
                 key={i}
                 thumbnail={'https://static.vecteezy.com/system/resources/previews/000/330/430/original/vector-pencil-line-black-icon.jpg'}
                 title={'Web Developer'}
@@ -46,7 +46,7 @@ export default function Index (){
             </div>
             
             
-            <div className="laptop:grid grid-cols-2 tablet:grid-cols-2 mt-3">
+            <div className="grid grid-cols-2 laptop:flex-row dekstop:flex-row mobile:grid-cols-1 mt-3">
                     <div className="">
                         <img src="/images/landing2.png" alt="IMG-20211017-123751" border="0" className='w-auto h-auto'/>
                     </div>
@@ -64,10 +64,6 @@ export default function Index (){
                             “ I also want to continue learning and growing in technical skills related to my work, such as web programming. Web technologies continue to evolve rapidly, and by staying up-to-date and learning, I can take on new challenges in this field. I want to continue to improve my understanding of programming languages, frameworks, and related tools so that I can create innovative and efficient web solutions. Overall, the drive to grow and continually learn is important in achieving success in any field. By maintaining a passion for learning and identifying areas in which I would like to develop, I can improve my skills, gain new knowledge, and reach higher personal and professional goals. “
                 </p>
             </div>
-            
-        </div>
-      </div>
-      </>
     
-    )
+            </LayoutPage>
 }

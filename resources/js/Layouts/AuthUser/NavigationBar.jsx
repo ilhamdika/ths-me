@@ -4,10 +4,19 @@ import { Link } from '@inertiajs/react'
 
 
 export default function NavigationBar (){
-    let Links =[
-        {name:"Home",link:"/"},
-        {name:"Portfolio",link:"/"},
-        {name:"About Me",link:"/"},
+    let Menu =[
+        {
+          name:"Home",
+          link: "prototype.index"
+        },
+        {
+          name:"Portfolio",
+          link:"prototype.portfolio"
+        },
+        {
+          name:"About Me",
+          link: "prototype.about"
+        },
         
       ];
       let [open,setOpen]=useState(false);
@@ -34,9 +43,11 @@ export default function NavigationBar (){
             <Link href='/'>About Me</Link>
        </li> */}
         {
-          Links.map((link)=>(
-            <li key={link.name} className='md:ml-8 text-xl md:my-0 my-7'>
-              <Link href={link.link} className='text-white hover:text-gray-400 duration-500 ml-5 mr-10'>{link.name}</Link>
+          Menu.map((menu)=>(
+            <li key={menu.name} className='laptop:ml-8 text-xl md:my-0 my-7'>
+              <Link href={route(menu.link)} className='text-white hover:text-gray-400 duration-500 ml-5 mr-10'>
+                {menu.name}
+              </Link>
             </li>
           ))
         }

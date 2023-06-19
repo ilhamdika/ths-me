@@ -25,6 +25,12 @@ Route::prefix('prototype')->group(function () {
     route::get('index', function () {
         return Inertia::render('Prototype/Index');
     })->name('prototype.index');
+    route::get('portfolio', function () {
+        return Inertia::render('Prototype/Portfolio');
+    })->name('prototype.portfolio');
+    route::get('about', function () {
+        return Inertia::render('Prototype/AboutMe');
+    })->name('prototype.about');
 });
 
 Route::get('/dashboard', function () {
