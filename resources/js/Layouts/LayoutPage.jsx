@@ -1,6 +1,8 @@
 import NavigationBar from "./AuthUser/NavigationBar";
 
 export default function LayoutPage ({children}){
+
+    
     return(
         <>
         <div className="bg-black">

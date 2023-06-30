@@ -21,7 +21,7 @@ export default function AboutMe() {
         </Head>
         {
             loading ? <div className="flex justify-center items-center h-screen">
-                <DotLoader color={'#fff'} loading={loading} size={150} />
+                <DotLoader color={'#fff'} loading={loading} size={100} className="overflow-auto" />
             </div> :
         <div className="">
 
@@ -59,7 +59,7 @@ export default function AboutMe() {
             </div>
             <div className="p-4 mt-4">
                 <TypeIt className="text-white text-3xl font-thin mobile:pt-32">About me</TypeIt>
-                <p className="text-white text-xl font-thin mt-3">
+                <p className="text-white text-xl font-thin mt-3 text-justify">
                 I am a fresh graduate of S1 Informatics Engineering who is always motivated and able to work together in a team or work individually. Now looking for a position as a web developer. Someone who is thorough, structured, and nimble when doing tasks. Ambitious to learn and grow from the experiences I've had.
                 </p>
             </div>
