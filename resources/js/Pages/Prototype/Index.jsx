@@ -1,17 +1,27 @@
 import Card from "@/Components/Card";
-import CardPortfolio from "@/Components/CardPortfolio";
 import PrimaryButton from "@/Components/PrimaryButton";
-import AuthUser from "@/Layouts/AuthUser/Index";
-import NavigationBar from "@/Layouts/AuthUser/NavigationBar";
 import LayoutPage from "@/Layouts/LayoutPage";
+import TypeIt from "typeit-react";
+import { useState, useEffect } from "react";
+import { DotLoader } from "react-spinners";
 
 
 export default function Index (){
+    const [loading,setLoading]=useState(false)
+    useEffect(()=>{
+        setLoading(true)
+        setTimeout(()=>{
+            setLoading(false)
+        },2000)
+    },[])
+
     return<LayoutPage>
+        {
+            loading ? <div className="flex justify-center items-center h-screen">
+                <DotLoader color={'#fff'} loading={loading} size={150} />
+            </div> :
 
-    
-      
-
+            <div>
             {/* Hero Content */}
             <div className="flex justify-center items-center py-36">
                 <div className="">
@@ -19,12 +29,12 @@ export default function Index (){
                     {/* <h1 className="text-white justify-center items-center flex mt-2">
                         Hi, internet
                     </h1> */}
-                    <h1 className="text-white justify-center items-center flex text-2xl font-thin mt-2">
+                    <TypeIt className="text-white justify-center items-center flex text-2xl font-thin mt-2">
                         Ilham Dika Permana
-                    </h1>
-                    <h1 className="text-white justify-center items-center flex text-4xl mt-3 font-medium">
+                    </TypeIt>
+                    <TypeIt className="text-white justify-center items-center flex text-4xl mt-3 font-medium">
                         Web Developer
-                    </h1>
+                    </TypeIt>
                     <div className="flex justify-center items-center mt-3">
                         <PrimaryButton className="text-white  w-52">
                             About Me
@@ -65,5 +75,7 @@ export default function Index (){
                 </p>
             </div>
     
+            </div>
+        }
             </LayoutPage>
 }

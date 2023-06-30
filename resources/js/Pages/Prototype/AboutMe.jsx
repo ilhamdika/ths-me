@@ -1,21 +1,35 @@
 import LayoutPage from "@/Layouts/LayoutPage";
 import { Head, Link } from "@inertiajs/react";
-import Flickity from "react-flickity-component";
+import TypeIt from "typeit-react";
+import { useState, useEffect } from "react";
+import { DotLoader } from "react-spinners";
 
 
 export default function AboutMe() {
   
+    const [loading,setLoading]=useState(false)
+    useEffect(()=>{
+        setLoading(true)
+        setTimeout(()=>{
+            setLoading(false)
+        },2000)
+    },[])
 
     return<LayoutPage>
         <Head>
-            <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css" />
-            <title>Dashboard</title>
+            <title>About Me</title>
         </Head>
+        {
+            loading ? <div className="flex justify-center items-center h-screen">
+                <DotLoader color={'#fff'} loading={loading} size={150} />
+            </div> :
+        <div className="">
+
         <div className="grid grid-cols-2 dekstop:h-screen laptop:h-screen laptop:flex-row dekstop:flex-row tablet:flex-row mobile:h-auto mobile:grid-cols-1 pt-32">
             <div className="">
             <div className="flex justify-center">
                 <div className="">
-                    <img src="/images/landing.png" alt="IMG-20211017-123751" border="0" className='rounded-full w-64 h-64'/>
+                    <img src="/images/landing.png" alt="IMG-20211017-123751" border="0" className='rounded-full w-64 h-64 '/>
                     {/* <h1 className="text-white justify-center items-center flex mt-2">
                         Hi, internet
                     </h1> */}
@@ -26,7 +40,7 @@ export default function AboutMe() {
                         Web Developer
                     </h1>
                     <div className="flex flex-row">
-                        <Link>
+                        <Link className="">
                             <img src="/images/github.png" className="w-10 h-10 mx-3 my-2"/>
                         </Link>
                         <Link>
@@ -44,7 +58,7 @@ export default function AboutMe() {
             </div>
             </div>
             <div className="p-4 mt-4">
-                <h1 className="text-white text-3xl font-thin">About me</h1>
+                <TypeIt className="text-white text-3xl font-thin mobile:pt-32">About me</TypeIt>
                 <p className="text-white text-xl font-thin mt-3">
                 I am a fresh graduate of S1 Informatics Engineering who is always motivated and able to work together in a team or work individually. Now looking for a position as a web developer. Someone who is thorough, structured, and nimble when doing tasks. Ambitious to learn and grow from the experiences I've had.
                 </p>
@@ -88,5 +102,8 @@ export default function AboutMe() {
                 </div>
             </div>
         </div>
+        </div>
+            
+        }
     </LayoutPage>
 }

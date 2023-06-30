@@ -1,11 +1,23 @@
 import CardPortfolio from "@/Components/CardPortfolio"
 import LayoutPage from "@/Layouts/LayoutPage"
+import { useState, useEffect } from "react"
+import { DotLoader } from "react-spinners"
 
 
-
-LayoutPage
 export default function Portfolio (){
+    const [loading,setLoading]=useState(false)
+    useEffect(()=>{
+        setLoading(true)
+        setTimeout(()=>{
+            setLoading(false)
+        },1000)
+    },[])
+
     return<LayoutPage>
+        {
+            loading ? <div className="flex justify-center items-center h-screen">
+                <DotLoader color={'#fff'} loading={loading} size={150} />
+            </div> :
         <div className="pt-32">
             <h1 className="text-white justify-center text-center items-center flex text-4xl my-10 font-medium">
                 This is the result of my work</h1>
@@ -21,5 +33,6 @@ export default function Portfolio (){
                 ))}
             </div>
         </div>
+        }
     </LayoutPage>
 }
