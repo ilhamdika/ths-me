@@ -1,5 +1,5 @@
 import CardPortfolio from "@/Components/CardPortfolio"
-import LayoutPage from "@/Layouts/LayoutPage"
+import LayoutPage from "@/Layouts/AuthUser/LayoutPage"
 import { useState, useEffect } from "react"
 import { DotLoader } from "react-spinners"
 import TypeIt from "typeit-react"

@@ -1,6 +1,6 @@
 import Card from "@/Components/Card";
 import PrimaryButton from "@/Components/PrimaryButton";
-import LayoutPage from "@/Layouts/LayoutPage";
+import LayoutPage from "@/Layouts/AuthUser/LayoutPage";
 import TypeIt from "typeit-react";
 import { useState, useEffect } from "react";
 import { DotLoader } from "react-spinners";

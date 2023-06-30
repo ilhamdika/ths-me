@@ -1,4 +1,4 @@
-import LayoutPage from "@/Layouts/LayoutPage";
+import LayoutPage from "@/Layouts/AuthUser/LayoutPage";
 import { Head, Link } from "@inertiajs/react";
 import TypeIt from "typeit-react";
 import { useState, useEffect } from "react";

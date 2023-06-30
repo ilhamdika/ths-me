@@ -1,4 +1,4 @@
-import NavigationBar from "./AuthUser/NavigationBar";
+import NavigationBar from "./NavigationBar"
 
 export default function LayoutPage ({children}){
 

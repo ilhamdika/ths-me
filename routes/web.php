@@ -31,6 +31,16 @@ Route::prefix('prototype')->group(function () {
     route::get('about', function () {
         return Inertia::render('Prototype/AboutMe');
     })->name('prototype.about');
+
+    route::get('admin', function () {
+        return Inertia::render('Prototype/Admin/Index');
+    })->name('prototype.admin');
+    route::get('admin/portfolio', function () {
+        return Inertia::render('Prototype/Admin/Portfolio');
+    })->name('prototype.admin.portfolio');
+    route::get('admin/about', function () {
+        return Inertia::render('Prototype/Admin/AboutMe');
+    })->name('prototype.admin.about');
 });
 
 Route::get('/dashboard', function () {
