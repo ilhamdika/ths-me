@@ -17,12 +17,12 @@ export default function Portfolio (){
     return<LayoutPage>
         {
             loading ? <div className="flex justify-center items-center h-screen">
-                <DotLoader color={'#fff'} loading={loading} size={150} />
+                <DotLoader color={'#a9dbd2'} loading={loading} size={150} />
             </div> :
         <div className="pt-22 mobile:pt-10">
-            <TypeIt className="text-white justify-center text-center items-center flex text-4xl my-10 font-medium mobile:">
+            <TypeIt className="dark:text-white justify-center text-center items-center flex text-4xl my-10 font-medium mobile:">
                 Portfolio</TypeIt>
-                <h1 className="text-white justify-center text-center items-center flex text-xl my-10 font-light">This is the result of my work</h1>
+                <h1 className="dark:text-white justify-center text-center items-center flex text-xl my-10 font-light">This is the result of my work</h1>
          <div className="grid grid-cols-3 laptop:flex-row dekstop:flex-row tablet:flex-row mobile:h-auto mobile:grid-cols-1">
                 {[1,2,3,4,5,6,7].map(i=> (
                 <CardPortfolio className={'bg-slate-900'}

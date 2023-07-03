@@ -9,6 +9,8 @@ module.exports = {
         './resources/js/**/*.jsx',
     ],
 
+     
+
     theme: {
         extend: {
             fontFamily: {
@@ -26,9 +28,7 @@ module.exports = {
                     'extra-bold': '800',
                     black: '900',},
             },
-            colors: {
-                grey :'#252424',
-            }
+            
         },
     },
 
@@ -45,7 +45,20 @@ module.exports = {
 
           'mobile': {'max': '639px'},
         },
+
+        extend: {
+            colors: {
+              dark: '#1a202c',
+            },
+          },
       },
+      darkMode: 'class',
+      variants: {
+        extend: {},
+      },
+
+      
+      
 
     plugins: [require('@tailwindcss/forms')],
 };
