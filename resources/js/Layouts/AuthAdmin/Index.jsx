@@ -7,8 +7,6 @@ export default function Authenticated ({children}){
         <div className="flex">
 
             <SideBar />
-            
-
 
             <div className="h-screen flex-1 p-7">
                 <main>

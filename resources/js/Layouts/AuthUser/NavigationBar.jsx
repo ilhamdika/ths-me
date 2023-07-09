@@ -54,7 +54,7 @@ export default function NavigationBar ({text, click}){
           <PrimaryButton onClick={click}
           className="text-white"
           >
-            Dark
+            {text}
           </PrimaryButton>
       </ul>
        
