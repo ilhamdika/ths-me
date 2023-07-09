@@ -1,6 +1,7 @@
 import { useState } from "react";
+import { forwardRef, useEffect, useRef } from 'react';
 
-export default function ImageUploader({setImages,images}) {
+export default function ImageUploader({setImages,images, className, label}) {
     const [selectedImage, setSelectedImage] = useState(null);
 
   const handleImageChange = (e) => {
@@ -16,9 +17,16 @@ export default function ImageUploader({setImages,images}) {
 
   return (
     <div>
-      <input type="file" accept="image/*" onChange={handleImageChange} />
+    <h1>{label}</h1>
+      <input 
+        type="file" 
+        className="" accept="image/*" 
+        onChange={handleImageChange} 
+        
+    />
       {selectedImage && (
-        <img src={selectedImage} alt="Selected" style={{ maxWidth: '400px' }} />
+        <img src={selectedImage} alt="Selected" className={className} />
+        
       )}
     </div>
   )

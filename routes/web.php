@@ -41,6 +41,9 @@ Route::prefix('prototype')->group(function () {
     route::get('admin/about', function () {
         return Inertia::render('Prototype/Admin/AboutMe');
     })->name('prototype.admin.about');
+    route::get('admin/edit-about', function () {
+        return Inertia::render('Prototype/Admin/EditAboutMe');
+    })->name('prototype.admin.edit-about');
 });
 
 Route::get('/dashboard', function () {

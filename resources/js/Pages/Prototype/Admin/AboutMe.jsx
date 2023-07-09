@@ -1,3 +1,4 @@
+import PrimaryButton from "@/Components/PrimaryButton";
 import Authenticated from "@/Layouts/AuthAdmin";
 import { Link } from "@inertiajs/react";
 import { useState, useEffect } from "react";
@@ -27,9 +28,7 @@ export default function AboutMe() {
                     <div className="flex justify-center">
                         <div className="">
                             <img src="/images/landing.png" alt="IMG-20211017-123751" border="0" className='rounded-full w-64 h-64 '/>
-                            {/* <h1 className="dark:text-white justify-center items-center flex mt-2">
-                                Hi, internet
-                            </h1> */}
+                            
                             <h1 className="dark:text-white justify-center items-center flex text-2xl font-thin mt-2">
                                 Ilham Dika Permana
                             </h1>
@@ -51,6 +50,7 @@ export default function AboutMe() {
                                 </Link>
                             </div>
                             
+                            
                         </div>
                     </div>
                     </div>
@@ -59,7 +59,13 @@ export default function AboutMe() {
                         <p className="dark:text-white text-xl font-thin mt-3 text-justify">
                         I am a fresh graduate of S1 Informatics Engineering who is always motivated and able to work together in a team or work individually. Now looking for a position as a web developer. Someone who is thorough, structured, and nimble when doing tasks. Ambitious to learn and grow from the experiences I've had.
                         </p>
+                    <PrimaryButton className="bg-green-500">
+                                <Link href={route('prototype.admin.edit-about')}>
+                                    Edit
+                                </Link>
+                            </PrimaryButton>
                     </div>
+
                 </div>
         
                 <div>
