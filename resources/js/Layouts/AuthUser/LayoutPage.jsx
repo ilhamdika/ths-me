@@ -3,11 +3,12 @@ import NavigationBar from "./NavigationBar"
 import { usePage } from "@inertiajs/react"
 import { useEffect, useState } from "react";
 import { set } from "lodash";
+import { FiMoon, FiSun } from "react-icons/fi";
 
 
 export default function LayoutPage ({children}){
     const { props } = usePage();
-    const [dark, setDark] = useState('dark')
+    const [dark, setDark] = useState(true)
 
     const changeText = () => {
         setDark('dark')
@@ -21,16 +22,8 @@ export default function LayoutPage ({children}){
   }, []);
 
   const toggleTheme = () => {
-    const theme = localStorage.getItem('theme');
-    if (theme === 'dark') {
-      localStorage.setItem('theme', 'light');
-      document.documentElement.classList.remove('dark');
-      setDark('change dark')
-    } else {
-      localStorage.setItem('theme', 'dark');
-      document.documentElement.classList.add('dark');
-        setDark('change light') 
-    }
+    setDark(!dark);
+    document.documentElement.classList.toggle('dark');
   };
 
     
@@ -40,8 +33,9 @@ export default function LayoutPage ({children}){
             <div className="mr-10 ml-10">
                 {/* Navbar */}
                 <NavigationBar
-                text={dark}
+                text={dark ? <FiSun/> : <FiMoon/>}
                 click={toggleTheme}
+                
                 
                 />
                 {/* <PrimaryButton onClick={toggleTheme}>Dark</PrimaryButton> */}

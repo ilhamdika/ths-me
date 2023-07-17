@@ -1,5 +1,14 @@
 import { Link } from "@inertiajs/react"
 
+
+// CardPortfolio.propTypes = {
+//     className: propTypes.string,
+//     thumbnail: propTypes.string,
+//     title: propTypes.string,
+//     description: propTypes.string,
+//     id: propTypes.number
+// }
+
 export default function CardPortfolio ({className, thumbnail, title, description}){
     return(
         <div className={`bg-slate-900 mr-3 ml-3 my-2 mobile:h-96 mobile:w-full mobile:my-3 mobile:mx-auto` + className }>

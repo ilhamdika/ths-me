@@ -30,7 +30,6 @@ export default function Portfolio (){
                 thumbnail={'https://static.vecteezy.com/system/resources/previews/000/330/430/original/vector-pencil-line-black-icon.jpg'}
                 title={'Web Developer'}
                 description={'Create a website for information, business etc., which can be accessed digitally'}
-                
                 />
                 ))}
             </div>
