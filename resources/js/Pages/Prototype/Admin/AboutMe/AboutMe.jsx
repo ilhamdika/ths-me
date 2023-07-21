@@ -4,6 +4,7 @@ import { Link } from "@inertiajs/react";
 import { useState, useEffect } from "react";
 import { DotLoader } from "react-spinners";
 import TypeIt from "typeit-react";
+import { AiFillEdit } from "react-icons/ai";
 
 export default function AboutMe() {
     const [loading,setLoading]=useState(false)
@@ -15,7 +16,7 @@ export default function AboutMe() {
     },[])
 
     return (
-        <Authenticated>
+        <Authenticated className="dark:bg-dark">
             {
                 loading ? <div className="flex justify-center items-center h-screen">
                     <DotLoader color={'#161616'} loading={loading} size={150} />
@@ -59,9 +60,9 @@ export default function AboutMe() {
                         <p className="dark:text-white text-xl font-thin mt-3 text-justify">
                         I am a fresh graduate of S1 Informatics Engineering who is always motivated and able to work together in a team or work individually. Now looking for a position as a web developer. Someone who is thorough, structured, and nimble when doing tasks. Ambitious to learn and grow from the experiences I've had.
                         </p>
-                    <PrimaryButton className="bg-green-500">
+                    <PrimaryButton className="bg-green-500 dark:bg-green-500">
                                 <Link href={route('prototype.admin.edit-about')}>
-                                    Edit
+                                <AiFillEdit size="20" />
                                 </Link>
                             </PrimaryButton>
                     </div>
@@ -82,9 +83,9 @@ export default function AboutMe() {
                             
                         
                         </div>
-                    <PrimaryButton>
+                    <PrimaryButton className="bg-green-500 dark:bg-green-500">
                         <Link href={route('prototype.admin.skills')}>
-                            Edit
+                            <AiFillEdit size="20" />
                         </Link>
                     </PrimaryButton>
                 </div>

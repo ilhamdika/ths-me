@@ -20,7 +20,7 @@ export default function index () {
                 </div> :
                 
             <div className="flex justify-center items-center h-screen">
-                <h1 className="text-3xl font-bold">Welcome to Admin About Me</h1>
+                <h1 className="text-3xl font-bold dark:text-white">Welcome to Admin About Me</h1>
             </div>
             }
         </Authenticated>

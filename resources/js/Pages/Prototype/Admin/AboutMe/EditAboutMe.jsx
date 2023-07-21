@@ -24,7 +24,7 @@ export default function EditAboutMe() {
                             />
                             
                             <TextInput
-                                className="dark:text-white justify-center items-center flex text-2xl font-thin mt-2"
+                                className="dark:text-black justify-center items-center flex text-2xl font-thin mt-2"
                                 label="Name"
                                 name="name"
                                 type="text"
@@ -32,7 +32,7 @@ export default function EditAboutMe() {
                             />
 
                             <TextInput
-                                className="dark:text-white justify-center items-center flex text-xl font-thin mt-2"
+                                className="dark:text-black justify-center items-center flex text-xl font-thin mt-2"
                                 label="Job"
                                 name="job"
                                 type="text"
@@ -64,13 +64,13 @@ export default function EditAboutMe() {
                     <div className="p-4 mt-4">
                         <TypeIt className="dark:text-white text-3xl font-thin mobile:pt-32">About me</TypeIt>
                         <TextInput
-                            className="dark:text-white text-xl font-thin mt-3 w-full h-64 border-collapse border-2 border-gray-300 rounded-md p-2 text-justify"
+                            className="dark:text-black text-xl font-thin mt-3 w-full h-64 border-collapse border-2 border-gray-300 rounded-md p-2 text-justify"
                             label="Description"
                             name="description"
                             type="paragraph"
                             defaultValue="I am a fresh graduate of S1 Informatics Engineering who is always motivated and able to work together in a team or work individually. Now looking for a position as a web developer. Someone who is thorough, structured, and nimble when doing tasks. Ambitious to learn and grow from the experiences I've had."
                         />
-                    <PrimaryButton className="bg-blue-500">
+                    <PrimaryButton className="bg-blue-500 dark:bg-blue-300 mt-2">
                                 <Link href={route('prototype.admin.edit-about')}>
                                     Save
                                 </Link>

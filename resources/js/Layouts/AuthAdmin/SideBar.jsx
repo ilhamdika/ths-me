@@ -6,29 +6,30 @@ import { AiOutlineFileText } from "react-icons/ai";
 import { SiAboutdotme } from "react-icons/si";
 import { HiOutlineViewList } from "react-icons/hi";
 import { CiLogout } from "react-icons/ci";
+import PrimaryButton from "@/Components/PrimaryButton";
 
-export default function SideBar() {
+export default function SideBar({click, icon}) {
     const [open, setOpen] = useState(true);
     const Menus = [
         {
             name: "Dashboard",
             link: 'prototype.admin',
-            src:  <MdDashboard size="32" color="black"/>,
+            src:  <MdDashboard size="32" color="black" className="dark:bg-slate-200 rounded-xl"/>,
         },
         {
             name: "Portfolio",
             link: 'prototype.admin.portfolio',
-            src:  <AiOutlineFileText size="32" color="black" />,
+            src:  <AiOutlineFileText size="32" color="black" className="dark:bg-slate-200 rounded-xl"/>,
         },
         {
             name: "About Me",
             link: 'prototype.admin.about',
-            src:  <SiAboutdotme  size="32" color="black"/>,
+            src:  <SiAboutdotme  size="32" color="black" className="dark:bg-slate-200 rounded-xl"/>,
         },
         {
             name: "Logout",
             link: 'logout',
-            src:  <CiLogout size="32" color="black"/>,
+            src:  <CiLogout size="32" color="black" className="bg-rose-600 rounded-xl"/>,
         }
       
     ];
@@ -39,22 +40,22 @@ export default function SideBar() {
       <div
         className={` ${
           open ? "w-72" : "w-20 "
-        } bg-emerald-300 h-screen p-5  pt-8 relative duration-300`}
+        } bg-emerald-300 dark:bg-slate-500 h-screen p-5 pt-8 relative duration-300`}
       >
         <HiOutlineViewList
           size={30}
-          className={`absolute cursor-pointer -right-3 top-9 w-7  ${!open && "rotate-180"}`}
+          className={`absolute cursor-pointer -right-3 top-9 w-7 dark:bg-slate-200 rounded-xl ${!open && "rotate-180 "}`}
           onClick={() => setOpen(!open)}
         />
         <div className="flex gap-x-4 items-center">
           <GrUserAdmin
             size="40"
-            className={`w-10 cursor-pointer duration-500 ${
+            className={`w-10 cursor-pointer duration-500  ${
               open && "rotate-[360deg]"
             }`}
           />
           <h1
-            className={`text-black origin-left font-medium text-xl duration-200 ${
+            className={`text-black origin-left font-medium text-xl duration-200 dark:text-white ${
               !open && "scale-0"
             }`}
           >
@@ -74,12 +75,20 @@ export default function SideBar() {
               {/* <img src={Menu.src} className="w-9" /> */}
               {Menu.src}
               </Link>
-              <Link href={route(Menu.link)} className={` w-10 ${!open && "hidden"} origin-left duration-200 text-black`}>
+              <Link href={route(Menu.link)} className={` w-10 ${!open && "hidden"} origin-left duration-200 text-black dark:text-white`}>
                 {Menu.name}
               </Link>
             </li>
           ))}
         </ul>
+        <div className="absolute bottom-0 mb-5">
+        <PrimaryButton onClick={click}
+          className="text-white bg-slate-600 dark:bg-white dark:text-black "
+          >
+            {icon}
+          </PrimaryButton>
+          <p className="text-black text-sm">© 2021 MeIlham</p>
+          </div>
       </div>
       
     

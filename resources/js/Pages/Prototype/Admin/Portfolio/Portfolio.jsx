@@ -23,14 +23,14 @@ export default function Portfolio() {
                     <DotLoader color={'#161616'} loading={loading} size={150} />
                 </div> :
             <div className="justify-center items-center h-screen">
-                <h1 className="text-3xl font-bold my-3">Welcome to Admin Portfolio</h1>
-                <PrimaryButton className="bg-green-500">
+                <h1 className="text-3xl font-bold my-3 dark:text-white">Welcome to Admin Portfolio</h1>
+                <PrimaryButton className="bg-green-500 dark:bg-green-500">
                     <Link href={route('prototype.admin.add-portfolio')}>
                         Create
                     </Link>
                 </PrimaryButton>
 
-                <table className="mt-3 w-full">
+                <table className="mt-3 w-full dark:text-white">
 						<thead>
 							<tr>
 								<th>No</th>

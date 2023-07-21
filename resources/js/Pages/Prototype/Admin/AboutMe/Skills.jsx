@@ -7,18 +7,18 @@ import { AiFillEdit, AiFillDelete } from "react-icons/ai"
 
 export default function SkillsEdit (){
     return <Authenticated>
-        <h1 className="text-3xl font-bold">Welcome to Admin Edit Skills</h1>
+        <h1 className="text-3xl font-bold dark:text-white">Skills</h1>
 
         <div>
-                    <h1 className="dark:text-white text-3xl font-bold text-center">My Skills</h1>
+                    <h1 className="dark:text-white text-3xl font-bold text-center mt-3">My Skills</h1>
 
-                    <PrimaryButton className="bg-green-500">
+                    <PrimaryButton className="bg-green-500 dark:bg-green-500">
                     <Link href={route('prototype.admin.add-skills')}>
                         Create
                     </Link>
                 </PrimaryButton>
                     
-                    <table className="mt-3 w-full">
+                    <table className="mt-3 w-full dark:text-white">
 						<thead>
 							<tr>
 								<th>No</th>
@@ -40,12 +40,12 @@ export default function SkillsEdit (){
                                     <div className="flex items-center justify-center h-full">
 
                                     <Link>
-                                        <PrimaryButton className="bg-yellow-500 mobile:w-10">
+                                        <PrimaryButton className="bg-yellow-500 dark:bg-yellow-500 mobile:w-10">
                                             <AiFillEdit size="20" />
                                         </PrimaryButton>
                                     </Link>
                                    
-                                    <PrimaryButton className="bg-red-600 mobile:w-10">
+                                    <PrimaryButton className="bg-red-600 dark:bg-red-600 mobile:w-10">
                                         <AiFillDelete size="20" />
                                     </PrimaryButton>
                                     </div>

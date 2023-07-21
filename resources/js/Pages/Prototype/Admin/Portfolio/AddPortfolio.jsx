@@ -6,16 +6,16 @@ import PrimaryButton from "@/Components/PrimaryButton"
 
 export default function PortfolioAdd (){
     return <Authenticated>
-        <h1 className="text-3xl font-bold">Welcome to Admin Add Portfolio</h1>
+        <h1 className="text-3xl font-bold dark:text-white">Welcome to Admin Add Portfolio</h1>
 
         <form>
             
             <InputLabel
-                className="text-2xl mt-2"
+                className="text-2xl mt-2 dark:text-white"
                 value="Title"
             />
             <TextInput
-                className="dark:text-white justify-center items-center flex text-2xl font-thin mt-2"
+                className="dark:text-black justify-center items-center flex text-2xl font-thin mt-2"
                 label="Title"
                 name="title"
                 type="text"
@@ -23,11 +23,11 @@ export default function PortfolioAdd (){
             />
 
             <InputLabel
-                className="text-2xl mt-2"
+                className="text-2xl mt-2 dark:text-white"
                 value="Tecnology"
             />
             <TextInput
-                className="dark:text-white justify-center items-center flex text-2xl font-thin mt-2"
+                className="dark:text-black justify-center items-center flex text-2xl font-thin mt-2"
                 label="Tecnology"
                 name="tecnology"
                 type="text"
@@ -35,7 +35,7 @@ export default function PortfolioAdd (){
             />
 
             <InputLabel
-                className="text-2xl mt-2"
+                className="text-2xl mt-2 dark:text-white"
                 value="Image"
             />
 
@@ -45,11 +45,11 @@ export default function PortfolioAdd (){
             />
 
             <InputLabel
-                className="text-2xl mt-2"
+                className="text-2xl mt-2 dark:text-white"
                 value="Description"
             />
             <TextInput
-                className="dark:text-white justify-center items-center flex text-2xl font-thin mt-2"
+                className="dark:text-black justify-center items-center flex text-2xl font-thin mt-2"
                 label="Description"
                 name="description"
                 type="text"
@@ -57,11 +57,11 @@ export default function PortfolioAdd (){
             />
 
             <InputLabel
-                className="text-2xl mt-2"
+                className="text-2xl mt-2 dark:text-white"
                 value="Link"
             />
             <TextInput
-                className="dark:text-white justify-center items-center flex text-2xl font-thin mt-2"
+                className="dark:text-black justify-center items-center flex text-2xl font-thin mt-2"
                 label="Link"
                 name="link"
                 type="text"
@@ -69,18 +69,18 @@ export default function PortfolioAdd (){
             />
 
             <InputLabel
-                className="text-2xl mt-2"
+                className="text-2xl mt-2 dark:text-white"
                 value="Github"
             />
             <TextInput
-                className="dark:text-white justify-center items-center flex text-2xl font-thin mt-2"
+                className="dark:text-black justify-center items-center flex text-2xl font-thin mt-2"
                 label="Github"
                 name="github"
                 type="text"
                 placeholder="Github"
             />
 
-            <PrimaryButton className="mt-3">
+            <PrimaryButton className="mt-3 dark:bg-blue-300">
                 Save
             </PrimaryButton>
         </form>
