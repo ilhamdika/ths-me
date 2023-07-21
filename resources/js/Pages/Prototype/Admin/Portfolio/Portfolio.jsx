@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { DotLoader } from "react-spinners";
 import PrimaryButton from "@/Components/PrimaryButton";
 import { Link } from "@inertiajs/react";
+import { AiFillEdit, AiFillDelete } from "react-icons/ai"
+import { BiDetail } from "react-icons/bi"
 
 
 export default function Portfolio() {
@@ -23,7 +25,7 @@ export default function Portfolio() {
             <div className="justify-center items-center h-screen">
                 <h1 className="text-3xl font-bold my-3">Welcome to Admin Portfolio</h1>
                 <PrimaryButton className="bg-green-500">
-                    <Link href="/admin/portfolio/create">
+                    <Link href={route('prototype.admin.add-portfolio')}>
                         Create
                     </Link>
                 </PrimaryButton>
@@ -48,19 +50,21 @@ export default function Portfolio() {
 								<td>Naruto</td>
 								<td>Action</td>
 								<td className="w-auto">
+                                <div className="flex items-center justify-center h-full">
                                     <Link>
                                         <PrimaryButton className="bg-yellow-500 mobile:w-10">
-                                            Edit
+                                            <AiFillEdit size="20" />
                                         </PrimaryButton>
                                     </Link>
                                     <Link>
                                         <PrimaryButton className="bg-green-500 mobile:w-10">
-                                            Detail
+                                            <BiDetail size="20" />
                                         </PrimaryButton>
                                     </Link>
                                     <PrimaryButton className="bg-red-600 mobile:w-10">
-                                        Delete
+                                        <AiFillDelete size="20" />
                                     </PrimaryButton>
+                                </div>
                                 </td>
 							</tr>
 							

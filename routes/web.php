@@ -36,8 +36,11 @@ Route::prefix('prototype')->group(function () {
         return Inertia::render('Prototype/Admin/Index');
     })->name('prototype.admin');
     route::get('admin/portfolio', function () {
-        return Inertia::render('Prototype/Admin/Portfolio');
+        return Inertia::render('Prototype/Admin/Portfolio/Portfolio');
     })->name('prototype.admin.portfolio');
+    route::get('admin/add-portfolio', function () {
+        return Inertia::render('Prototype/Admin/Portfolio/AddPortfolio');
+    })->name('prototype.admin.add-portfolio');
 
     route::get('admin/about', function () {
         return Inertia::render('Prototype/Admin/AboutMe/AboutMe');
