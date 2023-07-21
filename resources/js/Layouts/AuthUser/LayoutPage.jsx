@@ -1,25 +1,11 @@
-import PrimaryButton from "@/Components/PrimaryButton"
 import NavigationBar from "./NavigationBar"
-import { usePage } from "@inertiajs/react"
-import { useEffect, useState } from "react";
-import { set } from "lodash";
+import { useState } from "react";
 import { FiMoon, FiSun } from "react-icons/fi";
 
 
 export default function LayoutPage ({children}){
-    const { props } = usePage();
-    const [dark, setDark] = useState(true)
-
-    const changeText = () => {
-        setDark('dark')
-    }
-
-  useEffect(() => {
-    const theme = localStorage.getItem('theme');
-    if (theme) {
-      document.documentElement.classList.add(theme);
-    }
-  }, []);
+    
+  const [dark, setDark] = useState(true);
 
   const toggleTheme = () => {
     setDark(!dark);
@@ -33,12 +19,11 @@ export default function LayoutPage ({children}){
             <div className="mr-10 ml-10">
                 {/* Navbar */}
                 <NavigationBar
-                text={dark ? <FiSun/> : <FiMoon/>}
+                text={dark ? <FiMoon/> : <FiSun/> }
                 click={toggleTheme}
                 
                 
                 />
-                {/* <PrimaryButton onClick={toggleTheme}>Dark</PrimaryButton> */}
 
                 {/* Konten */}
                 <div>
