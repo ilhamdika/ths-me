@@ -10,14 +10,20 @@ export default function SkillAdd (){
 
         <form>
         <div className="mt-3">
-
+        <InputLabel
+            className="text-2xl my-2"
+            value="Image"
+        />
         <ImageUploader
             className="w-64 h-64 rounded-full"
-            label="Profile Picture"
+            
             name = "skill"
         />
 
-    
+        <InputLabel
+            className="text-2xl mt-2"
+            value="Skill"
+        />
         <TextInput
             className="dark:text-white justify-center items-center flex text-2xl font-thin mt-2"
             label="Name"
