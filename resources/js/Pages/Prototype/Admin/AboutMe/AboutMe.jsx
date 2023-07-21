@@ -79,9 +79,14 @@ export default function AboutMe() {
                                 className="w-28 h-28 max-w-sm mobile:w-14 mobile:h-14 tablet:w-24 mx-3 my-2"
                                 />
                             ))}
+                            
                         
                         </div>
-                    
+                    <PrimaryButton>
+                        <Link href={route('prototype.admin.skills')}>
+                            Edit
+                        </Link>
+                    </PrimaryButton>
                 </div>
         
                 {/* Edication */}

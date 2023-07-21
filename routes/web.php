@@ -38,12 +38,21 @@ Route::prefix('prototype')->group(function () {
     route::get('admin/portfolio', function () {
         return Inertia::render('Prototype/Admin/Portfolio');
     })->name('prototype.admin.portfolio');
+
     route::get('admin/about', function () {
-        return Inertia::render('Prototype/Admin/AboutMe');
+        return Inertia::render('Prototype/Admin/AboutMe/AboutMe');
     })->name('prototype.admin.about');
     route::get('admin/edit-about', function () {
-        return Inertia::render('Prototype/Admin/EditAboutMe');
+        return Inertia::render('Prototype/Admin/AboutMe/EditAboutMe');
     })->name('prototype.admin.edit-about');
+
+    route::get('admin/add-skills', function () {
+        return Inertia::render('Prototype/Admin/AboutMe/SkillAdd');
+    })->name('prototype.admin.add-skills');
+    route::get('admin/skills', function () {
+        return Inertia::render('Prototype/Admin/AboutMe/Skills');
+    })->name('prototype.admin.skills');
+
     route::get('portfolio/{id}', function () {
         return Inertia::render('Prototype/PortfolioDetail');
     })->name('prototype.portfolio.detail');
