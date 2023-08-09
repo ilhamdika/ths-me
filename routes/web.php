@@ -18,13 +18,47 @@ use Inertia\Inertia;
 
 
 
-Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
+
+Route::redirect('/', 'index');
+
+Route::prefix('prototype')->group(function () {
+    route::get('index', function () {
+        return Inertia::render('Prototype/Index');
+    })->name('prototype.index');
+    route::get('portfolio', function () {
+        return Inertia::render('Prototype/Portfolio');
+    })->name('prototype.portfolio');
+    route::get('about', function () {
+        return Inertia::render('Prototype/AboutMe');
+    })->name('prototype.about');
+
+    route::get('admin', function () {
+        return Inertia::render('Prototype/Admin/Index');
+    })->name('prototype.admin');
+    route::get('admin/portfolio', function () {
+        return Inertia::render('Prototype/Admin/Portfolio/Portfolio');
+    })->name('prototype.admin.portfolio');
+    route::get('admin/add-portfolio', function () {
+        return Inertia::render('Prototype/Admin/Portfolio/AddPortfolio');
+    })->name('prototype.admin.add-portfolio');
+
+    route::get('admin/about', function () {
+        return Inertia::render('Prototype/Admin/AboutMe/AboutMe');
+    })->name('prototype.admin.about');
+    route::get('admin/edit-about', function () {
+        return Inertia::render('Prototype/Admin/AboutMe/EditAboutMe');
+    })->name('prototype.admin.edit-about');
+
+    route::get('admin/add-skills', function () {
+        return Inertia::render('Prototype/Admin/AboutMe/SkillAdd');
+    })->name('prototype.admin.add-skills');
+    route::get('admin/skills', function () {
+        return Inertia::render('Prototype/Admin/AboutMe/Skills');
+    })->name('prototype.admin.skills');
+
+    route::get('portfolio/{id}', function () {
+        return Inertia::render('Prototype/PortfolioDetail');
+    })->name('prototype.portfolio.detail');
 });
 
 Route::get('/dashboard', function () {
