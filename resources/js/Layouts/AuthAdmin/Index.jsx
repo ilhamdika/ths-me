@@ -2,7 +2,7 @@ import SideBar from "./SideBar";
 import { useState } from "react";
 import { FiMoon, FiSun } from "react-icons/fi";
 
-export default function Authenticated ({children}){
+export default function Authenticated ({auth, children}){
     const [dark, setDark] = useState(true);
 
     const toggleTheme = () => {
@@ -18,6 +18,7 @@ export default function Authenticated ({children}){
             <SideBar
             icon={dark ? <FiMoon/> : <FiSun/> }
             click={toggleTheme}
+            auth={auth}
             />
 
             <div className="h-auto flex-1 p-7">
