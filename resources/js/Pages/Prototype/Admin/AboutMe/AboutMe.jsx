@@ -71,6 +71,11 @@ export default function AboutMe() {
         
                 <div>
                     <h1 className="dark:text-white text-3xl font-bold text-center">My Skills</h1>
+                    <PrimaryButton className="bg-green-500 dark:bg-green-500 ">
+                        <Link href={route('prototype.admin.skills')}>
+                            <AiFillEdit size="20" />
+                        </Link>
+                    </PrimaryButton>
                     
                         <div className="dekstop:grid-cols-9 laptop:grid-cols-9 tablet:grid-cols-7 flex flex-wrap justify-center">
                         
@@ -83,11 +88,7 @@ export default function AboutMe() {
                             
                         
                         </div>
-                    <PrimaryButton className="bg-green-500 dark:bg-green-500">
-                        <Link href={route('prototype.admin.skills')}>
-                            <AiFillEdit size="20" />
-                        </Link>
-                    </PrimaryButton>
+                    
                 </div>
         
                 {/* Edication */}
