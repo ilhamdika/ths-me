@@ -9,7 +9,7 @@ export default function PrimaryButton({ className = '', disabled, children,  typ
             }
             disabled={disabled}
             onClick={onClick}
-            type={type}
+            
         >
             {children}
         </button>

@@ -72,7 +72,9 @@ class AdminPortfolioController extends Controller
      */
     public function edit(Portfolio $portfolio)
     {
-        //
+        return Inertia('Admin/Portfolio/Edit', [
+            'portfolio' => $portfolio
+        ]);
     }
 
     /**

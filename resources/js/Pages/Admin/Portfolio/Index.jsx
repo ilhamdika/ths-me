@@ -7,7 +7,7 @@ import { AiFillEdit, AiFillDelete } from "react-icons/ai"
 import { BiDetail } from "react-icons/bi"
 
 
-export default function Portfolio({auth}) {
+export default function Portfolio({auth, portfolios}) {
     const [loading,setLoading]=useState(false)
     useEffect(()=>{
         setLoading(true)
@@ -15,6 +15,10 @@ export default function Portfolio({auth}) {
             setLoading(false)
         },2000)
     },[])
+
+    
+
+    
 
     return (
         <Authenticated auth={auth}>
@@ -41,22 +45,22 @@ export default function Portfolio({auth}) {
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-                                <td>1</td>
+                            {portfolios.map((portfolio, i=1) => (
+							<tr key={portfolio.id}>
+                                <td>{i+1}</td>
 								<td>
-									<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5TdYsTZ2WFbJLwPwgbVfexWzppcvGaUxEcg&usqp=CAU" />
-									
+									<img src={`/storage/${portfolio.image}`} className="w-23 h-20" />
 								</td>
-								<td>Naruto</td>
-								<td>Action</td>
+								<td>{portfolio.title}</td>
+								<td>{portfolio.technology}</td>
 								<td className="w-auto">
                                 <div className="flex items-center justify-center h-full">
-                                    <Link>
+                                    <Link href={route('admin.dashboard.portfolio.edit', portfolio.id)}>
                                         <PrimaryButton className="bg-yellow-500 mobile:w-10">
                                             <AiFillEdit size="20" />
                                         </PrimaryButton>
                                     </Link>
-                                    <Link>
+                                    <Link href={route('admin.dashboard.portfolio.show', portfolio.id)}>
                                         <PrimaryButton className="bg-green-500 mobile:w-10">
                                             <BiDetail size="20" />
                                         </PrimaryButton>
@@ -67,6 +71,7 @@ export default function Portfolio({auth}) {
                                 </div>
                                 </td>
 							</tr>
+                            ))}
 							
 						</tbody>
 					</table>
