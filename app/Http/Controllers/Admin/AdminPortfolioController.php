@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Portfolio;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use App\Http\Requests\Admin\Portfolio\Store;
+use Illuminate\Support\Facades\Storage;
 
 class AdminPortfolioController extends Controller
 {
@@ -16,7 +18,10 @@ class AdminPortfolioController extends Controller
      */
     public function index()
     {
-        return Inertia('Admin/Portfolio/Index');
+        $portfolios = Portfolio::all();
+        return Inertia('Admin/Portfolio/Index', [
+            'portfolios' => $portfolios
+        ]);
     }
 
     /**
@@ -35,9 +40,17 @@ class AdminPortfolioController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Store $request)
     {
-        //
+        // return $request->all();
+        try {
+            $data = $request->validated();
+            $data['image'] = Storage::disk('public')->put('portfolio', $request->file('image'));
+            $portfolio = Portfolio::create($data);
+            return redirect()->route('admin.dashboard.portfolio.index')->with('success', 'Portfolio item created successfully');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Something went wrong');
+        }
     }
 
     /**

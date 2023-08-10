@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { forwardRef, useEffect, useRef } from 'react';
 
-export default function ImageUploader({setImages,images, className, label}) {
+export default function ImageUploader({setImages,images, className, label, handleChange, value, defaultValue, isFocused}) {
     const [selectedImage, setSelectedImage] = useState(null);
 
   const handleImageChange = (e) => {
@@ -15,13 +15,24 @@ export default function ImageUploader({setImages,images, className, label}) {
     }
   };
 
+  const input = useRef();
+
+  useEffect(() => {
+    if (isFocused) {
+        input.current.focus();
+    }
+}, []);
+
   return (
     <div>
     <h1>{label}</h1>
       <input 
         type="file" 
         className="" accept="image/*" 
-        onChange={handleImageChange} 
+        onChange={(e) => {handleChange(e);handleImageChange(e)}}
+        value={value}
+        defaultValue={defaultValue}
+        ref={input}
         
     />
       {selectedImage && (
