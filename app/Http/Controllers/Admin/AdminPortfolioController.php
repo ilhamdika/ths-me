@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\Portfolio\EditPortfolio;
 use App\Models\Portfolio;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -84,9 +85,24 @@ class AdminPortfolioController extends Controller
      * @param  \App\Models\Portfolio  $portfolio
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Portfolio $portfolio)
+    public function update(EditPortfolio $request, Portfolio $portfolio)
     {
-        //
+        $data = $request->validated();
+        if ($request->file('image')) {
+            $data['image'] = Storage::disk('public')->put('portfolio', $request->file('image'));
+            Storage::disk('public')->delete($portfolio->image);
+        } else {
+            $data['image'] = $portfolio->image;
+        }
+
+        $portfolio->update($data);
+
+        return redirect(route('admin.dashboard.portfolio.index'))->with([
+            'message' => 'Portfolio item updated successfully',
+            'type' => 'success'
+        ]);
+
+        // return $request->all();
     }
 
     /**
