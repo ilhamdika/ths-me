@@ -115,6 +115,11 @@ class AdminPortfolioController extends Controller
      */
     public function destroy(Portfolio $portfolio)
     {
-        //
+        $portfolio->delete();
+
+        return redirect(route('admin.dashboard.portfolio.index'))->with([
+            'message' => 'Portfolio item deleted successfully',
+            'type' => 'success'
+        ]);
     }
 }

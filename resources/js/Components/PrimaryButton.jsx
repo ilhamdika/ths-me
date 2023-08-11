@@ -8,8 +8,8 @@ export default function PrimaryButton({ className = '', disabled, children,  typ
                 } ` + className
             }
             disabled={disabled}
+            type={type}
             onClick={onClick}
-            
         >
             {children}
         </button>

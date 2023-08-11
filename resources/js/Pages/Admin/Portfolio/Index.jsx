@@ -2,7 +2,7 @@ import Authenticated from "@/Layouts/AuthAdmin";
 import { useState, useEffect } from "react";
 import { DotLoader } from "react-spinners";
 import PrimaryButton from "@/Components/PrimaryButton";
-import { Link } from "@inertiajs/react";
+import { Link, useForm } from "@inertiajs/react";
 import { AiFillEdit, AiFillDelete } from "react-icons/ai"
 import { BiDetail } from "react-icons/bi"
 
@@ -16,9 +16,7 @@ export default function Portfolio({auth, portfolios}) {
         },2000)
     },[])
 
-    
-
-    
+    const {delete: destroy} =useForm()
 
     return (
         <Authenticated auth={auth}>
@@ -65,7 +63,19 @@ export default function Portfolio({auth, portfolios}) {
                                             <BiDetail size="20" />
                                         </PrimaryButton>
                                     </Link>
-                                    <PrimaryButton className="bg-red-600 mobile:w-10">
+                                    {/* <PrimaryButton className="bg-red-600 mobile:w-10"
+                                    onClick={()=> {
+                                        destroy('admin.dashboard.portfolio.destroy', portfolio.id)
+                                    }}
+                                    >
+                                        <AiFillDelete size="20" />
+                                    </PrimaryButton> */}
+
+                                    <PrimaryButton className="bg-red-600 mobile:w-10"
+                                        onClick={()=> {
+										destroy(route('admin.dashboard.portfolio.destroy', portfolio.id)) 
+									    }}
+                                    >
                                         <AiFillDelete size="20" />
                                     </PrimaryButton>
                                 </div>
