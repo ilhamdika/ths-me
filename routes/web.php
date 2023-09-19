@@ -4,6 +4,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\Admin\AdminPortfolioController;
+use App\Http\Controllers\Admin\AdminAboutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +22,11 @@ use Inertia\Inertia;
 
 
 Route::redirect('/', 'index');
+
+Route::middleware(['auth', 'role:admin'])->prefix('dashboard')->name('admin.dashboard.')->group(function () {
+    Route::resource('portfolio', AdminPortfolioController::class);
+    Route::resource('about', AdminAboutController::class);
+});
 
 Route::prefix('prototype')->group(function () {
     route::get('index', function () {
@@ -64,6 +71,8 @@ Route::prefix('prototype')->group(function () {
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
