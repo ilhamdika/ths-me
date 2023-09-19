@@ -5,6 +5,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\Admin\AdminPortfolioController;
+use App\Http\Controllers\Admin\AdminAboutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,7 @@ Route::redirect('/', 'index');
 
 Route::middleware(['auth', 'role:admin'])->prefix('dashboard')->name('admin.dashboard.')->group(function () {
     Route::resource('portfolio', AdminPortfolioController::class);
+    Route::resource('about', AdminAboutController::class);
 });
 
 Route::prefix('prototype')->group(function () {

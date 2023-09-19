@@ -18,12 +18,12 @@ export default function SideBar({click, icon}) {
         },
         {
             name: "Portfolio",
-            link: 'prototype.admin.portfolio',
+            link: 'admin.dashboard.portfolio.index',
             src:  <AiOutlineFileText size="32" color="black" className="dark:bg-slate-200 rounded-xl"/>,
         },
         {
             name: "About Me",
-            link: 'prototype.admin.about',
+            link: 'admin.dashboard.about.index',
             src:  <SiAboutdotme  size="32" color="black" className="dark:bg-slate-200 rounded-xl"/>,
         },
         {

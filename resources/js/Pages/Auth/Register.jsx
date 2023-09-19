@@ -45,7 +45,7 @@ export default function Register() {
                         className="mt-1 block w-full"
                         autoComplete="name"
                         isFocused={true}
-                        onChange={handleOnChange}
+                        handleChange={handleOnChange}
                         required
                     />
 
@@ -62,7 +62,7 @@ export default function Register() {
                         value={data.email}
                         className="mt-1 block w-full"
                         autoComplete="username"
-                        onChange={handleOnChange}
+                        handleChange={handleOnChange}
                         required
                     />
 
@@ -79,7 +79,7 @@ export default function Register() {
                         value={data.password}
                         className="mt-1 block w-full"
                         autoComplete="new-password"
-                        onChange={handleOnChange}
+                        handleChange={handleOnChange}
                         required
                     />
 
@@ -96,7 +96,7 @@ export default function Register() {
                         value={data.password_confirmation}
                         className="mt-1 block w-full"
                         autoComplete="new-password"
-                        onChange={handleOnChange}
+                        handleChange={handleOnChange}
                         required
                     />
 
